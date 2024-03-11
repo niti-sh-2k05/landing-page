@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to APPZINN</title>
+   
+    <link href="./login page.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .dell {
+            background-image: url('ferrari_welcome page.jpg');
+
+            background-size: cover;
+            height: 100vh;
+            width: 190vh;
+
+        }
+
+        .cl {
+            padding: 10px;
+            font-size: 30px;
+            text-align: center;
+            align-items: center;
+        }
+
+        .ct {
+            padding-top: 100px;
+            align-items: center;
+            text-align: center;
+            font-size: 40px;
+            color: rgb(243, 186, 29);
+        }
+
+        #timer {
+            padding-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="del">
+                        <div class="dell">
+                            <div class="ct">
+                                <img style="background-color: red;border-radius: 20px;" height="150px" src="appzinn.logo.png">
+                                <p style="font-size: 60px;">APPZINN</p>
+                            </div>
+                            <div class="cl">
+                                <p style="color: cyan;font-size: 40px;">Welcome to APPZINN...</p>
+                                <h3 style="color: skyblue;">Let's get into the car decs world!</h3>
+                                <div id="timer" style="color: rgb(145, 57, 57);">Please wait..You may let you inn in:
+                                    <span id="countdown">03</span> seconds</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        let timeLeft = 4;
+
+        function updateTimer() {
+            document.getElementById('countdown').innerText = timeLeft;
+        }
+
+        function countdown() {
+            if (timeLeft > 0) {
+                timeLeft--;
+                updateTimer();
+            } else {
+                 window.location.href = '#';//'Index.html';
+            }
+        }
+
+        updateTimer();
+     const timerInterval = setInterval(countdown, 1000);
+    </script>
+</body>
+
+</html>
